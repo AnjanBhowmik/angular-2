@@ -1,0 +1,25 @@
+<div class="headerWrapper">
+   <p *ngIf="successfullLogin==true" class="loginDetails">
+      <span class="name">Welcome :{{ userName}}</span>
+      <span class="role">[ {{userRole}} ]</span>
+      <span class="logout" (click)="adminLogout($event)">Logout</span>
+   </p>
+   <p class="blueBar"></p>
+   <a  href="#">
+   <img alt="CI Logo" src="app/assests/images/logo.png">
+   </a>
+   <ul class="navTabs" *ngIf="successfullLogin">
+      <li
+         *ngIf="userRole=='HR-Manager' || userRole == 'HR-Staff'" >
+         <a [routerLink]="['EmployeeList']">Employee List</a>
+      </li>
+      <li
+         *ngIf="userRole=='HR-Manager' || userRole == 'Manager'" >
+         <a [routerLink]="['EmployeeResource']">Resources List</a>
+      </li>
+      <li><a [routerLink]="['faq']">FAQ</a></li>
+   </ul>
+</div>
+<!--eof headerWrapper-->
+<router-outlet outlet="main"></router-outlet>
+<router-outlet outlet="aux" name="aux"></router-outlet>

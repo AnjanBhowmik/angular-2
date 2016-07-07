@@ -1,0 +1,36 @@
+<div class="loginFormDiv">
+   <h1>Login</h1>
+   <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+   <fieldset>
+      <label>User Name :</label>
+      <input 
+      type="text" 
+      placeholder="UserName"
+      name="username"
+      [(ngModel)]="user.name"
+      #username="ngModel"
+      required>
+      <span *ngIf="clear" class="loginErrorDisplay">
+      <span *ngIf="!username.valid && username.touched" class="error">
+      <sup>*</sup>Username is required.
+      </span>
+      </span>
+   </fieldset>
+   <fieldset>
+      <label>Password :</label>
+      <input 
+      type="password" 
+      placeholder="Password"
+      name="password"
+      [(ngModel)]="user.password"
+      #password="ngModel"
+      required>
+      <span *ngIf="clear" class="loginErrorDisplay">
+      <span *ngIf="!password.valid && password.touched" class="error">
+      <sup>*</sup>Password is required.
+      </span>
+      </span>
+   </fieldset>
+   <button type="submit" class="loginBtn" [disabled]="!f.valid">Login</button>
+   </form>
+</div>

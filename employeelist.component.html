@@ -1,0 +1,127 @@
+<div class="subWrap">
+   <h3 class="heading">Add / Update an Employee </h3>
+   <div class="row">
+      <div class="empInput">
+         <h5 class="pofile">Profile:</h5>
+         <form #f="ngForm" novalidate>
+            <fieldset class="fields">
+               <label>Employee Id : </label>
+               <input type="text" [(ngModel)]="employee.id" name="id" #id="ngModel" [disabled]="block" (blur)="blurAddMatch()" maxlength="6" minlength="6" pattern="[0-9]{6}" required/>
+               <span *ngIf="clear" class="errorDisplay">
+               <span  *ngIf=" !id.valid && id.touched"><sup>*</sup>Required & must be of 6 digits</span>
+               </span>
+            </fieldset>
+            <fieldset class="fields">
+               <label>Employee Name : </label>
+               <input type="text" [(ngModel)]="employee.name" name="name" #name="ngModel" maxlength="18" required pattern="^[a-zA-Z ]{2,30}$" />
+               <span *ngIf="clear" class="errorDisplay">
+               <span  *ngIf="!name.valid && name.touched"><sup>*</sup>Inavalid name</span>
+               </span>
+            </fieldset>
+            <fieldset class="fields">
+               <label>Title</label>
+               <select class="drop" [(ngModel)]="employee.title" name="title" #title="ngModel" required>
+               <option>PM</option>
+               <option>PAT</option>
+               <option>PA</option>
+               <option>TL</option>
+               </select>
+               <span *ngIf="clear" class="errorDisplay">
+               <span  *ngIf="!title.valid && title.touched"><sup>*</sup>Required</span>
+               </span>
+            </fieldset>
+            <fieldset class="fields">
+               <label>Position :</label>
+               <input type="radio" value="On-site" [(ngModel)]="employee.position" name="position" class="radio">On-Site
+               <input type="radio" value="Off-shore" [(ngModel)]="employee.position" name="position" class="radio">Off-shore
+            </fieldset>
+            <fieldset class="fields">
+               <label for="comp">Competency:</label>
+               <select class="drop" [(ngModel)]="employee.competency" name="competency" #competency="ngModel" required>
+               <option>CI Web</option>
+               <option>CI RIA</option>
+               </select>
+               <span *ngIf="clear" class="errorDisplay">
+               <span  *ngIf="!competency.valid && competency.touched"><sup>*</sup>Required</span>
+               </span>
+            </fieldset>
+            <h5>Emergency Contact:</h5>
+            <fieldset class="fields">
+               <label for="contact">Contact No:</label>
+               <input type="text" id="contact" [(ngModel)]="employee.contactNo" name="contactNo" #contactNo="ngModel" required pattern="[7-9]{1}[0-9]{9}" />
+               <span *ngIf="clear" class="errorDisplay">
+               <span  *ngIf="!contactNo.valid && contactNo.touched"><sup>*</sup>Required & must be valid Indian no.</span>
+               </span>
+            </fieldset>
+            <fieldset class="fields">
+               <label for="blood">Blood Group:</label>
+               <input type="text" [(ngModel)]="employee.bloodGroup" name="blood" #bloodGroup="ngModel" required maxlength="3" pattern="[a || b || o ||A ||B || O]{1,}[+ || -]{1}$" />
+               <span *ngIf="clear" class="errorDisplay">
+               <span  *ngIf="!bloodGroup.valid && bloodGroup.touched"><sup>*</sup>Invalid blood group</span>
+               </span>
+            </fieldset>
+            <fieldset class="fields">
+               <label for="adr" class="addressLabel">Address:</label>
+               <textarea name="address" [(ngModel)]="employee.address" name="address" #address="ngModel" required></textarea>
+               <span *ngIf="clear" class="errorDisplay">
+               <span  *ngIf="!address.valid && address.touched"><sup>*</sup>Required</span>
+               </span>
+            </fieldset>
+            <p class="buttonsGroup">
+               <button type="submit" class="formBtns" [disabled]="!f.form.valid" *ngIf="save" (click)="empAddData()">Save</button>
+               <button type="submit" class="formBtns" [disabled]="!f.form.valid" *ngIf="!save" (click)="empAddData()">Update</button>
+               <button type="submit" class="formBtns" (click)="reset()">Reset</button>
+            </p>
+         </form>
+      </div>
+      <div class="idCardDisplay">
+         <div class="idCard">
+            <div class="nameId">
+               <p class="empImage"><img src="{{employee.imageUrl}}" />
+               </p>
+               <p class="empName">{{employee.name | uppercase}}</p>
+               <p class="empId">{{employee.id}}</p>
+            </div>
+            <div class="details">
+               <p class="empSubId">{{employee.id}}
+               <p>Emergency Contact # <span> {{ employee.contactNo}}</span>
+               </p>
+               <p>Blood Group : <span> {{ employee.bloodGroup}}</span>
+               </p>
+               <p>Address : <span> {{ employee.address}}</span>
+               </p>
+            </div>
+         </div>
+      </div>
+      <div class="tableDiv">
+         <table class="tbInEmpList">
+            <thead>
+               <tr>
+                  <th>Employee ID</th>
+                  <th>Employee Name</th>
+                  <th>Title</th>
+                  <th>Competency</th>
+                  <th>Position</th>
+                  <th>Edit</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr *ngFor="let employee of employeesData; let i = index">
+                  <td>{{employee.id}}</td>
+                  <td>{{employee.name | uppercase}}</td>
+                  <td>{{employee.title}}</td>
+                  <td>{{employee.competency}}</td>
+                  <td>{{employee.position}}</td>
+                  <td>
+                     <a>
+                     <img src="app/assests/images/edit.png" (click)="editData(i)">
+                     </a>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+   </div>
+   <!--eof row-->
+</div>
+<!--eof subWrap-->

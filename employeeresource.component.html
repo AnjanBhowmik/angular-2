@@ -1,0 +1,113 @@
+<div class="subWrap">
+   <h3 class="heading">Request For Resource</h3>
+   <div class="empInput resourceEmp">
+      <h5 class="pofile">Profile:</h5>
+      <form #f="ngForm" novalidate>
+         <fieldset>
+            <label>Designation : </label>
+            <select class="drop" name="designation" [(ngModel)]="employee.designation" #designation="ngModel" required>
+            <option>Programmer Analyst</option>
+            <option>Programmer Analyst Trainee</option>
+            <option>Associate</option>
+            <option>Sr. Associate</option>
+            <option>Manager</option>
+            </select>
+            <span *ngIf="clear" class="errorDisplay">
+            <span  *ngIf=" !designation.valid && designation.touched"><sup>*</sup>Required</span>
+            </span>
+         </fieldset>
+         <fieldset>
+            <label>Experience in years :</label>
+            <input type="number" [(ngModel)]="employee.years" name="years" #years="ngModel" pattern="^([1-9]|[1-5][0-9]|60|all)$" required/>
+            <span *ngIf="clear" class="errorDisplay">
+            <span  *ngIf=" !years.valid && years.touched"><sup>*</sup>Enter valid no. of years</span>
+            </span>
+         </fieldset>
+         <fieldset>
+            <label>Numbers :</label>
+            <input type="number" [(ngModel)]="employee.numbers" name="numbers" #numbers="ngModel" pattern="^([1-9]|[1-2][0-9]|30|all)$" required/>
+            <span *ngIf="clear" class="errorDisplay">
+            <span  *ngIf=" !numbers.valid && numbers.touched"><sup>*</sup>Enter valid numbers</span>
+            </span>
+         </fieldset>
+         <fieldset>
+            <label>Skills :</label>
+            <span class="checkBoxes">
+               <input type="checkbox" name="skill" value="HTML" (change)="check($event, option)" ngModel>HTML
+               <!--[(ngModel)]="employee.skill1" #skill="ngModel"
+                  >HTML-->
+               <input type="checkbox" name="skill" value="Java Script" [(ngModel)]="employee.skill2" #skill="ngModel">Java Script
+               <input type="checkbox" name="skill" value="CSS" [(ngModel)]="employee.skill3" #skill="ngModel">CSS
+               <input type="checkbox" name="skill" value="JQ" [(ngModel)]="employee.skill4" #skill="ngModel">JQ
+               <input type="checkbox" name="skill" value="Flash" [(ngModel)]="employee.skill5" #skill="ngModel">Flash
+               <input type="checkbox" name="skill" value="Flex" [(ngModel)]="employee.skill6" #skill="ngModel">Flex
+            </span>
+         </fieldset>
+         <fieldset>
+            <label>Competency : </label>
+            <select class="drop" name="competency" [(ngModel)]="employee.competency" #competency="ngModel" required>
+            <option>CI WEB</option>
+            <option>CI RIA</option>
+            </select>
+            <span *ngIf="clear" class="errorDisplay">
+            <span  *ngIf=" !competency.valid && competency.touched"><sup>*</sup>Required</span>
+            </span>
+         </fieldset>
+         <fieldset>
+            <label>Position :</label>
+            <input type="radio" value="On-site" [(ngModel)]="employee.position" name="position" class="radio">On-Site
+            <input type="radio"  value="Off-shore" [(ngModel)]="employee.position" name="position" class="radio">Off-shore
+         </fieldset>
+         <fieldset>
+            <label>Location : </label>
+            <select class="drop" name="location" [(ngModel)]="employee.location" #location="ngModel" required>
+            <option>Chennai</option>
+            <option>Bangalore</option>
+            <option>Kolkata</option>
+            <option>Kochin</option>
+            <option>Gurgaon</option>
+            </select>
+            <span *ngIf="clear" class="errorDisplay">
+            <span  *ngIf=" !location.valid && location.touched"><sup>*</sup>Required</span>
+            </span>
+         </fieldset>
+         <p class="empButtonsGroup">
+            <button type="submit" class="formBtns" [disabled]="!f.form.valid" *ngIf="save" (click)="empAddData()">Save</button>
+            <button type="submit" class="formBtns" [disabled]="!f.form.valid" *ngIf="!save" (click)="empAddData()">Update</button>
+            <button type="submit" class="formBtns" (click)="reset()">Reset</button>
+         </p>
+      </form>
+   </div>
+   <div class="tableDiv" *ngIf = "showTable">
+      <h5 class="pofile">Request List :</h5>
+      <table class="tbInEmpList">
+         <thead>
+            <tr>
+               <th>Token</th>
+               <th>Experience years</th>
+               <th>Designation</th>
+               <th>Competency</th>
+               <th>Numbers</th>
+               <th>Position</th>
+               <th>Location</th>
+               <th>Edit</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr *ngFor="let employee of employeesData; let i = index">
+               <td>{{employee.token | uppercase}}</td>
+               <td>{{employee.years}}</td>
+               <td>{{employee.designation}}</td>
+               <td>{{employee.competency}}
+               <td>{{employee.numbers}}</td>
+               <td>{{employee.position}}</td>
+               <td>{{employee.location}}</td>
+               <td>
+                  <img src="app/assests/images/edit.png" (click)="editData(i)">
+               </td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+</div>
+<!--eof subWrap-->
