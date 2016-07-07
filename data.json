@@ -1,0 +1,22 @@
+[  
+      {  
+         "name":"Basha",
+         "role":"HR-Manager",
+         "password":"Pass123"
+      },
+      {  
+         "name":"Ramya",
+         "role":"HR-Manager",
+         "password":"Pass123"
+      },
+      {  
+         "name":"Raja",
+         "role":"HR-Staff",
+         "password":"Pass123"
+      },
+      {  
+         "name":"Ravi",
+         "role":"Manager",
+         "password":"Pass123"
+      }
+   ]

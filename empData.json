@@ -1,0 +1,57 @@
+[  
+      {  
+         "id":"201201",
+         "name":"S Sowmiya",
+         "title":"TL",
+         "position":"On-site",
+         "competency":"CI Web",
+         "contactNo":"9865741235",
+         "bloodGroup":"B+",
+         "address":"Sipcot Siruseri Chennai",
+         "imageUrl":"app/assests/images/default.png"
+      },
+      {  
+         "id":"201202",
+         "name":"Ankit Sharma",
+         "title":"PM",
+         "position":"On-site",
+         "competency":"CI Web",
+         "contactNo":"8865741200",
+         "bloodGroup":"O+",
+         "address":"TCO Chennai",
+         "imageUrl":"app/assests/images/ankit.PNG"
+      },
+      {  
+         "id":"201203",
+         "name":"Reshma",
+         "title":"PA",
+         "position":"Off-shore",
+         "competency":"CI RIA",
+         "contactNo":"7860041235",
+         "bloodGroup":"B-",
+         "address":"Sipcot Siruseri Chennai",
+         "imageUrl":"app/assests/images/reshma.jpg"
+      },
+      {  
+         "id":"201204",
+         "name":"Saravana",
+         "title":"PAT",
+         "position":"Off-shore",
+         "competency":"CI Web",
+         "contactNo":"7765749935",
+         "bloodGroup":"B+",
+         "address":"Sipcot Siruseri Chennai",
+         "imageUrl":"app/assests/images/sarvanan.jpg"
+      },
+      {  
+         "id":"201205",
+         "name":"Niranjan",
+         "title":"PAT",
+         "position":"On-site",
+         "competency":"CI RIA",
+         "contactNo":"9865741235",
+         "bloodGroup":"B+",
+         "address":"CKC Shallinganallur Chennai",
+         "imageUrl":"app/assests/images/niranjan.PNG"
+      }
+   ]

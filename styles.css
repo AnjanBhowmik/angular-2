@@ -1,0 +1,529 @@
+/* Master Styles */
+/*@font-face {
+  font-family: 'Glyphicons Halflings';
+    src: url("app/assests/fonts/glyphicons-halflings-regular.eot");
+    src: url("app/assests/fonts/glyphicons-halflings-regular.woff") format("woff"), url("app/assests/fonts/glyphicons-halflings-regular.ttf") format("truetype");
+}*/
+
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+
+h2, h3 {
+  color: #444;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+
+body {
+  width: 100%;
+  margin: 0 auto;
+}
+
+body, input[text], button {
+  color: #888;
+  font-family: Cambria, Georgia;
+}
+
+a {
+  cursor: pointer;
+  cursor: hand;
+}
+
+button {
+  font-family: Arial;
+  background-color: #eee;
+  padding: 12px 32px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #cfd8dc;
+}
+
+button:disabled {
+  background-color: #eee;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+/* Navigation link styles */
+nav a {
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #eee;
+  border-radius: 4px;
+}
+
+nav a:visited, a:link {
+  color: #607D8B;
+}
+
+nav a:hover {
+  color: #039be5;
+  background-color: #CFD8DC;
+}
+
+nav a.router-link-active {
+  color: #039be5;
+}
+
+/* items class */
+.items {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 24em;
+}
+
+.items li {
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+}
+
+.items li:hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+}
+
+.items li.selected:hover {
+  background-color: #BBD8DC;
+  color: white;
+}
+
+.items .text {
+  position: relative;
+  top: -3px;
+}
+
+.items {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 24em;
+}
+
+.items li {
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+}
+
+.items li:hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+}
+
+.items li.selected {
+  background-color: #CFD8DC;
+  color: white;
+}
+
+.items li.selected:hover {
+  background-color: #BBD8DC;
+}
+
+.items .text {
+  position: relative;
+  top: -3px;
+}
+
+.items .badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #607D8B;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}
+
+/* everywhere else */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.headerWrapper {
+  background-image: url('/assests/images/headerbg.png');
+  overflow: auto;
+}
+
+.headerWrapper img {
+  float: right;
+}
+
+.headerWrapper p {
+  display: inline-block;
+}
+
+footer {
+  clear: both;
+}
+
+footer .foot {
+  background-color: #9f9fa0;
+  text-align: center;
+  color: #fff;
+  padding: 20px 0;
+  font-weight: bold;
+  font-family: verdana;
+}
+
+.loginFormDiv {
+  width: 44%;
+  margin: 10% auto;
+  border: 2px solid #9f9fa0;
+  border-radius: 3px;
+  padding: 0 0 35px 0;
+}
+
+.loginFormDiv h1 {
+  border-bottom: 2px solid #d3d3d3;
+  color: #000;
+  margin: 29px 0 10px 39px;
+  padding: 0 0 9px 0;
+}
+
+.loginFormDiv label {
+  display: inline-block;
+  width: 117px;
+}
+
+.loginFormDiv fieldset {
+  margin: 0 0 30px 0;
+  color: #000;
+}
+
+.loginFormDiv form {
+  margin: 31px 0 0 46px;
+}
+
+.ng-touched .ng-invalid {
+  border: 1px solid red;
+}
+
+.error {
+  color: red;
+  font-style: italic;
+  position: absolute;
+}
+
+.loginBtn {
+  margin: 11px 0px 0px 146px;
+}
+
+.showLoginDetail {
+  display: inline-block;
+}
+
+.navTabs {
+  margin: 60px 0 0 0;
+}
+
+.navTabs li {
+  display: inline-block;
+  list-style-type: none;
+  padding: 10px;
+  border: 2px solid #888;
+  border-radius: 3px;
+  margin: 0 10px 0 0;
+}
+
+.navTabs li:hover {
+  cursor: pointer;
+}
+
+.navTabs li a {
+  text-decoration: none;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
+}
+
+.blueBar {
+  padding: 15px 0 0 0;
+  background-color: blue;
+}
+
+.heading {
+  padding: 12px 0 12px 30px;
+  background-color: #0d9c49;
+  font-size: 17px;
+  color: white;
+  margin: 0 0 0 0;
+  font-weight: bold;
+}
+
+label {
+  display: inline-block;
+  width: 140px;
+  color: #000;
+  font-size: 16px;
+}
+
+input, select {
+  width: 50%;
+  padding: 5px;
+}
+
+.empInput {
+  margin: 50px 0 60px 20px;
+  width: 45%;
+  float: left;
+}
+
+.radio {
+  width: 40px;
+  margin: 0 0 15px 0;
+}
+
+.buttonsGroup {
+  margin: 58px 0 0 136px;
+}
+
+textarea {
+  width: 50%;
+  padding: 32px;
+}
+
+.tbInEmpList {
+  overflow-x: auto;
+}
+
+.tbInEmpList tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.tbInEmpList tr:hover {
+  background-color: #ddd;
+}
+
+.tbInEmpList th {
+  font-weight: bold;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #0d9c49;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+}
+
+.tbInEmpList td {
+  width: 7%;
+  padding: 10px;
+  text-align: center;
+  color: #000;
+}
+
+.empInput h5 , .tableDiv h5 {
+  text-decoration: underline;
+  margin: 0 0 15px 0;
+}
+
+.tableDiv {
+  margin: 50px 0 0 0;
+  clear: both;
+}
+
+.resourceEmp input , .resourceEmp select {
+  width: 50%;
+}
+
+.resourceEmp label {
+  width: 25%;
+}
+
+.resourceEmp fieldset {
+  margin: 0 0 30px 0;
+}
+
+.checkBoxes {
+  width: 40%;
+  display: inline-block;
+}
+
+.checkBoxes input {
+  width: 30px;
+}
+
+input[type=radio] {
+  display: inline;
+}
+
+input[type=radio] {
+  width: 25px;
+}
+
+.idCard {
+  background: url("/assests/images/idcard.png") no-repeat;
+  min-height: 77%;
+  margin: 60px 0 0 0;
+}
+
+.idCardDisplay {
+  float: left;
+  width: 53%;
+}
+
+.fields {
+  margin: 0 0 37px 0;
+}
+
+.errorDisplay > span {
+  font-size: 15px;
+  color: indianred;
+  font-style: italic;
+}
+
+.errorDisplay {
+  display: block;
+  position: absolute;
+  margin: 0 0 5px 143px;
+}
+
+.resourceEmp .errorDisplay {
+  display: block;
+  position: absolute;
+  margin: 0 0 5px 196px;
+}
+
+fieldset {
+  display: block;
+}
+
+.wrapper {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.empButtonsGroup {
+  margin: 8% 0 0 30%;
+}
+
+.tbInEmpList img:hover {
+  cursor: pointer;
+}
+
+.nameId {
+  width: 43%;
+  display: inline-block;
+  margin: 0 0 0 27px;
+  position: relative;
+}
+
+.empImage {
+  margin: 0px 0px 0 81px;
+  position: relative;
+  top: 97px;
+}
+
+.empName {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+  text-align: center;
+  position: relative;
+  top: 117px;
+}
+
+.empId {
+  font-size: 32px;
+  font-weight: bold;
+  color: #000;
+  text-align: center;
+  position: relative;
+  top: 107px;
+}
+
+.details {
+  width: 42%;
+  display: inline-block;
+  margin: 168px 0 0 23px;
+  color: #000;
+}
+
+.details p {
+  font-weight: bold;
+}
+
+.details p span {
+  font-weight: normal;
+}
+
+.empSubId {
+  margin: 0 0 5px 23px;
+}
+
+.accorrdion {
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}
+
+.accorrdion-title {
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  padding: 17px;
+  color: #000;
+  font-size: 17px;
+  font-weight: bold;
+  background-color: #e6e6e6;
+}
+
+.accorrdion-content {
+  padding: 20px;
+}
+
+.accorrdion .accorrdion-title:hover {
+  background: #f0f0f0;
+  cursor: pointer;
+}
+
+.loginErrorDisplay {
+  display: block;
+  margin: 0 0 0 120px;
+}
+
+.logindetails {
+  margin: 12px 0 0 29px;
+}
+
+.logindetails span {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.name {
+  color: #e0770e;
+}
+
+.role {
+  color: #0616b1;
+}
+
+.logout {
+  cursor: pointer;
+}
+
+
